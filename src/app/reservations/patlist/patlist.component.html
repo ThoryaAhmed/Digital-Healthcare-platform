@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Patients List</h2>
+        <div class="container">
+            <div class="container">
+                <app-patitem *ngFor="let patient of patients"
+                [patient]="patient"
+                (selecteditem)="patientselected(patient)"
+                (clickedd)="ifclick()"
+                ></app-patitem>
+            </div>
+        </div>
+    </div>
+</div>

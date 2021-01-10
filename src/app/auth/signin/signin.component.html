@@ -1,0 +1,39 @@
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="container">
+    <div class="card card-container">
+        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+        <img   src="assets\logo1.png"  alt="" 
+        class="img-responsive"
+        style="max-height: 100px ;">
+        <p id="profile-name" class="profile-name-card"></p>
+        <form class="form-signin" (ngSubmit)="signIn(mailForm)" #mailForm="ngForm">
+            <div class="form-group">
+                <label class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="user" value="option1" (click)="ondoctor()">
+              <span class="form-check-label" > Doctor </span>
+            </label>
+            <label class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="user" value="option2" (click)="onpatient()">
+              <span class="form-check-label"> Patient </span>
+            </label>
+            </div>
+            <span id="reauth-email" class="reauth-email"></span>
+            <div class="form-group"> <input type="email" id="email"  name="email" class="form-control" placeholder="Email" required email autofocus ngModel #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>
+            </div>
+            
+            <div class="form-group"><input type="password" id="password" name="password" class="form-control" placeholder="Password" required ngModel #password="ngModel"></div>
+            
+            
+             
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" [disabled]="!mailForm.form.valid">Sign in</button>
+        </form><!-- /form -->
+    </div><!-- /card-container -->
+</div><!-- /container -->
+
+ 

@@ -18,7 +18,8 @@ import { DoctorInfoComponent } from './doctor-info/doctor-info.component';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { DoctorregistrationComponent } from './doctorregistration/doctorregistration.component';
 import { PaymentComponent } from './payment/payment.component';
-
+import { InfoService } from './info.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,14 +37,18 @@ import { PaymentComponent } from './payment/payment.component';
     PatientInfoComponent,
     DoctorregistrationComponent,
     PaymentComponent,
+    DoctorAppointmentsComponent,
+    DoctorInfoComponent,
+    PatientInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [LoginService, SignupService],
+  providers: [LoginService, SignupService, InfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

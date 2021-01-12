@@ -1,1 +1,37 @@
 <app-doctorheader></app-doctorheader>
+
+
+ <!-----the logo----->
+    <div class="displayed">
+    <div class="body">
+    <div class="row col-lg">
+        <img src="assets\logo1.png" alt="Medico logo"  >
+    </div>
+
+<!-------welcoming the doctor--------->
+
+<div  *ngFor="let doctor of doctors1" >
+    <h1>Welcome Dr {{doctor.userName}}</h1>
+
+
+    <hr>
+    
+
+    <div  class="blueSquare row col-lg">
+            <a href="#" class="list-group-item 
+            list-group-item-action
+             flex-column 
+             align-items-start 
+             active">
+              <p>User name: {{doctor.userName}} </p>
+              <p>Department: {{doctor.specialization}}</p>
+              <p>Area: {{doctor.area}}</p>
+              <p>Email: {{doctor.email}}</p>
+              <p>Gender: {{doctor.gender}}</p>
+
+           
+            </a>
+        </div>
+</div>
+</div>
+</div>

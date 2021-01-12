@@ -1,4 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -6,19 +8,14 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
- @Output() selectedfeature = new EventEmitter<string>() ;
   constructor() { }
+   // tslint:disable-next-line:typedef
+   logout(){
+    localStorage.removeItem('access_token');
+  }
+// tslint:disable-next-line:typedef
 
   ngOnInit(): void {
-  }
- // tslint:disable-next-line:typedef
- onselect(feature: string){
 
-this.selectedfeature.emit(feature) ;
-
-}
-// tslint:disable-next-line:typedef
-logout(){
-  localStorage.removeItem('access_token');
 }
 }

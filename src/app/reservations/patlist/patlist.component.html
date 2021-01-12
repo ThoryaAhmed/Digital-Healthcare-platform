@@ -1,14 +1,53 @@
-<div class="row">
+<app-doctorheader></app-doctorheader>
+<div *ngIf="Show()" class="row" >
     <div class="col-xs-12">
         <h2>Patients List</h2>
         <div class="container">
             <div class="container">
-                <app-patitem *ngFor="let patient of patients"
+                <app-patitem *ngFor="let patient of patients; let i = index"
                 [patient]="patient"
-                (selecteditem)="patientselected(patient)"
-                (clickedd)="ifclick()"
+                (clickedd)="ifclick(i)"
                 ></app-patitem>
             </div>
         </div>
     </div>
+</div>
+<div  *ngIf="!Show()">
+    <div class="col-xs-12">
+        <h2>Patient Information</h2>
+    </div>
+    <div class="col-md-7" style="background-color:lavender;">
+            <div class="container container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4>Name : {{patients[r()].name}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                         <h4>Email : {{patients[r()].email}}</h4> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                          <h4> Gender : {{patients[r()].gender}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                         <h4> Reserved day : {{patients[r()].day}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                         <h4> Reserved time : {{patients[r()].time}}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                         <h4>Medical History : {{patients[r()].medicalhistory}}</h4> 
+                        </div>
+                    </div>
+            </div>
+     </div>
 </div>

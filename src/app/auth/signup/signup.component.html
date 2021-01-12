@@ -1,3 +1,4 @@
+<app-header></app-header>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,10 +22,11 @@
 <article class="card-body">
 <form (ngSubmit)="onclick(f)" #f="ngForm">
     <div class="form-group">
-        <label class="form-check form-check-inline">
+    <label class="form-check form-check-inline">
       <input class="form-check-input" type="radio" name="user" value="option1" (click)="ondoctor()" ngModel required>
       <span class="form-check-label" > Doctor </span>
-    </label>
+	</label>
+	&nbsp;
     <label class="form-check form-check-inline">
       <input class="form-check-input" type="radio" name="user" value="option2"  (click)="onpatient()" ngModel required>
       <span class="form-check-label"> Patient </span>
@@ -43,10 +45,11 @@
 		<small class="form-text text-muted">We'll never share your email with anyone else.</small>
 	</div> <!-- form-group end.// -->
 	<div class="form-group">
-			<label class="form-check form-check-inline">
+		<label class="form-check form-check-inline">
 		  <input class="form-check-input" type="radio" name="gender" value="M" ngModel required>
 		  <span class="form-check-label"> Male </span>
 		</label>
+		&nbsp;
 		<label class="form-check form-check-inline">
 		  <input class="form-check-input" type="radio" name="gender" value="F" ngModel required>
 		  <span class="form-check-label"> Female </span>

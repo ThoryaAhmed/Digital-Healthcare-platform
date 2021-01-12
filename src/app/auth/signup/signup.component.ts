@@ -20,22 +20,26 @@ chosepat = 0 ;
     delete data.user;
     console.log(data);
     if (this.chosepat === 1){
-      this.signUp.signupd(data).subscribe((res: any) => {
-        console.log(JSON.parse(res._body).token);
-        this.signInService.storeToken(JSON.parse(res._body).token);
-        this.router.navigate(['/homed']);
-      }, err => {
-        console.log(err);
-      });
+      this.router.navigate(['/homed']);
+      this.signInService.storeToken('DoneDoctor');
+     // this.signUp.signupd(data).subscribe((res: any) => {
+      //  console.log(JSON.parse(res._body).token);
+      //  this.signInService.storeToken(JSON.parse(res._body).token);
+     //   this.router.navigate(['/homed']);
+    //  }, err => {
+    //    console.log(err);
+    //  });
     }
     if (this.chosepat === 2){
-      this.signUp.signupp(data).subscribe((res: any) => {
-        console.log(JSON.parse(res._body).token);
-        this.signInService.storeToken(JSON.parse(res._body).token);
-        this.router.navigate(['/homep']);
-      }, err => {
-        console.log(err);
-      });
+      this.router.navigate(['/homep']);
+      this.signInService.storeToken('DonePatient');
+   //   this.signUp.signupp(data).subscribe((res: any) => {
+   //     console.log(JSON.parse(res._body).token);
+   //     this.signInService.storeToken(JSON.parse(res._body).token);
+   //     this.router.navigate(['/homep']);
+   //   }, err => {
+   //     console.log(err);
+  //    });
     }
 
   }

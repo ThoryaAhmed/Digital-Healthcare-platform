@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Patient } from '../shared/patient.model';
 import { ReservationserviceService } from 'src/app/services/reservationservice.service';
+import { Patient } from '../shared/patient.model';
 
 
 @Component({
@@ -9,28 +9,35 @@ import { ReservationserviceService } from 'src/app/services/reservationservice.s
   styleUrls: ['./patlist.component.css']
 })
 export class PatlistComponent implements OnInit {
-  @Output() selectedpatient = new EventEmitter<Patient>();
-  @Output() featureselected = new EventEmitter<void>();
+   show = 1 ;
+   var = 0;
   constructor(private service: ReservationserviceService) { }
   patients: Patient[] = [
-    new Patient('Thorya Ahmed', 'thoryaabdelzaher@gmail.com', 'Female', 'NONE', 'sunday', '7 PM'),
-    new Patient('Diaa Ahmed', 'sasyahmed11@gmail.com', 'male', 'NONE', 'satday', '7 PM'),
-    new Patient('Fatma Ahmed', 'temoahmed30@gmail.com', 'Female', 'NONE', 'monday', '7 PM'),
+    new Patient('Thorya Ahmed', 'thoryaabdelzaher@gmail.com', 'Female', 'None', 'sunday', '7 PM'),
+    new Patient('Diaa Ahmed', 'sasyahmed11@gmail.com', 'male', 'NONE', 'satrday', '9 PM'),
+    new Patient('Fatma Ahmed', 'temoahmed30@gmail.com', 'Female', 'NONE', 'monday', '8 PM'),
   ];
 // tslint:disable-next-line:typedef
-patientselected(patient: Patient){
-this.selectedpatient.emit(patient);
+ifclick(i: number){
+this.show = 0 ;
+this.var = i;
 }
 // tslint:disable-next-line:typedef
-ifclick(){
-this.featureselected.emit();
+Show(){
+return this.show;
 }
-  ngOnInit(): void {
-this.service.reservedpatients().subscribe((res: any) => {
-this.patients.push(res);
-}, err => {
-  console.log(err);
-});
-  }
+// tslint:disable-next-line:typedef
+r(){
+return this.var;
+}
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
+// this.service.reservedpatients().subscribe((res: any) => {
+// this.patients.push(res);
+// }, err => {
+//   console.log(err);
+// });
+this.show = 1 ;
+}
 
 }

@@ -7,13 +7,18 @@ import { HttpModule } from '@angular/http';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { PatlistComponent } from './reservations/patlist/patlist.component';
-import { PatviewComponent } from './reservations/patview/patview.component';
 import { PatitemComponent } from './reservations/patlist/patitem/patitem.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginService } from './services/login.service';
 import { SignupService } from './services/signup.service';
-import { DoctorAccountComponent } from './doctor-account/doctor-account.component';
-import { PatientAccountComponent } from './patient-account/patient-account.component';
+import { DoctorheaderComponent } from './doctorheader/doctorheader.component';
+import { PatientheaderComponent } from './patientheader/patientheader.component';
+import { DoctorAppointmentsComponent } from './doctor-appointments/doctor-appointments.component';
+import { DoctorInfoComponent } from './doctor-info/doctor-info.component';
+import { PatientInfoComponent } from './patient-info/patient-info.component';
+import { DoctorregistrationComponent } from './doctorregistration/doctorregistration.component';
+import { PaymentComponent } from './payment/payment.component';
+
 
 
 @NgModule({
@@ -22,11 +27,15 @@ import { PatientAccountComponent } from './patient-account/patient-account.compo
     SignupComponent,
     SigninComponent,
     PatlistComponent,
-    PatviewComponent,
     PatitemComponent,
     HeaderComponent,
-    DoctorAccountComponent,
-    PatientAccountComponent,
+    DoctorheaderComponent,
+    PatientheaderComponent,
+    DoctorAppointmentsComponent,
+    DoctorInfoComponent,
+    PatientInfoComponent,
+    DoctorregistrationComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,

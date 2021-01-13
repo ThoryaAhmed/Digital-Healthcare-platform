@@ -18,6 +18,7 @@ import { DoctorInfoComponent } from './doctor-info/doctor-info.component';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { DoctorregistrationComponent } from './doctorregistration/doctorregistration.component';
 import { PaymentComponent } from './payment/payment.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -36,6 +37,7 @@ import { PaymentComponent } from './payment/payment.component';
     PatientInfoComponent,
     DoctorregistrationComponent,
     PaymentComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

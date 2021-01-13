@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentsFields } from '../classes/appointmentsFields';
 import { InfoService } from '../info.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctor-appointments',
@@ -8,7 +9,7 @@ import { InfoService } from '../info.service';
   styleUrls: ['./doctor-appointments.component.css']
 })
 export class DoctorAppointmentsComponent implements OnInit {
-  constructor(private service:InfoService ){}
+  constructor(private service:InfoService , private router: Router ){}
 
   appointments=[];
 

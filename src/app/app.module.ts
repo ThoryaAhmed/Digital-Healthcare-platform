@@ -20,7 +20,7 @@ import { DoctorregistrationComponent } from './doctorregistration/doctorregistra
 import { PaymentComponent } from './payment/payment.component';
 import { InfoService } from './info.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     PaymentComponent,
     DoctorAppointmentsComponent,
     DoctorInfoComponent,
-    PatientInfoComponent
+    PatientInfoComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

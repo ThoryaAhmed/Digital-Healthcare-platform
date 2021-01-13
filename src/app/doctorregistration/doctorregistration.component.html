@@ -1,1 +1,206 @@
+
 <app-patientheader></app-patientheader>
+<div class="container" >
+  <h1 class="mt-4" *ngIf="!SH()">choose the doctor  </h1>
+  
+ 
+</div>
+
+
+
+<br>
+
+
+<div style="background-color:lavender;" *ngIf="!SH()" >
+   <h3>search by name</h3> 
+  <input [(ngModel)]="n" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+    aria-label="Search">
+    <br>
+    <h3>search by department</h3> 
+    <input [(ngModel)]="d" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+    aria-label="Search">
+   <br>
+   <h3>search by area</h3> 
+    <input [(ngModel)]="a" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+    aria-label="Search">
+    </div>
+    <br>
+
+    <br>
+
+<table class="table" *ngIf="!SH()">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">department</th>
+      <th scope="col">area</th>
+      <th scope="col">fees</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doctor of doctors  | filter:n:'name':d:'department':a:'area' ; let i = index " >
+      
+      <th scope="row"></th>
+      <td>{{doctor.name}}</td>
+      <td>{{doctor.department}}</td>
+      <td>{{doctor.area}}</td>
+      <td>{{doctor.fees}}</td>
+    
+      
+    <td> <button type="button"   (click) ="display()" (click)="change(i)"    class="btn btn-primary btn-rounded">book</button></td>
+    </tr>
+    </table>
+
+    <div class="p-3 mb-2 bg-dark text-white" *ngIf="0">
+  
+  
+      <p class="fs-2">name: {{doctors[r()].name}}</p>
+        <p class="fs-2">department: {{doctors[r()].department}}</p>
+          <p class="fs-2">area: {{doctors[r()].area}}</p>
+            <p class="fs-2">fees:200</p>
+            <p class="fs-2">choose payment method :</p>
+            <div class="btn-group">
+              <input
+                type="radio"
+                class="btn-check"
+                name="options"
+                id="option1"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn btn-secondary" for="option1">credit card</label>
+            
+              <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+              <label class="btn btn-secondary" for="option2">cash</label>
+            
+              
+            </div>
+            <p class="fs-2">comments</p>
+       <div class="form-outline">
+  <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+ 
+</div>
+     
+  
+  </div>
+  <div style="background-color:lavender;">
+  <table class="table"  *ngIf="SH() && !dispalyconfirmation()">
+    <thead>
+     
+    </thead>
+    <tbody>
+      
+  
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>Name:</td>
+        <td>{{doctors[r()].name}}</td>
+      </tr>
+     
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>department:</td>
+        <td>{{doctors[r()].department}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>area: </td>
+        <td>{{doctors[r()].area}}</td>
+      </tr>
+      
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>fees</td>
+        <td>{{doctors[r()].fees}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>gender</td>
+        <td>{{doctors[r()].gender}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>email</td>
+        <td>{{doctors[r()].email}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>payment method</td>
+        <td><div class="btn-group">
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="option1"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn btn-secondary" for="option1">credit card</label>
+        
+          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+          <label class="btn btn-secondary" for="option2">cash</label>
+        
+          
+        </div></td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>add comment:</td>
+        <td><div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">comment</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div></td>
+        
+       
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>choose day</td>
+        <td><div class="form-outline">
+          <input type="text" id="typeText" class="form-control" />
+         
+        </div></td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td> </td>
+        <td><!-- Default radio -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1"> home visit </label>
+          </div>
+          
+          <!-- Default checked radio -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault2"> clinc </label>
+          </div></td>
+      </tr>
+      
+
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td></td>
+        <td><button type="button" class="btn btn-primary btn-lg" (click)="confirmation()">confirmation </button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+  <app-payment *ngIf="dispalyconfirmation()"></app-payment>
+    

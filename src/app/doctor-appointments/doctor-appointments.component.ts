@@ -39,5 +39,8 @@ export class DoctorAppointmentsComponent implements OnInit {
    log(totalForm:any){
      console.log(totalForm);
    }
+  route(){
+    this.router.navigate(['/homed']);
+   }
   
 }

@@ -1,27 +1,83 @@
-# MyTestApp
+# Medico
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Medico is a healthcare web application where your health is our priority
 
-## Development server
+## required frameworks
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<ul>
+  <li>Frontend : Angular</li>
+  <li>Backend : Django</li>
+</ul>
+ 
+For help getting started with Angular,Django and Bootstrap take a look at
+[online documentation](https://angular.io/) for Angular,
+and [online documentation](https://www.djangoproject.com/),to download and get started with Django,
+and [online documentation](https://getbootstrap.com/),to download and get started with Bootstrap.
+ 
+ 
 
-## Code scaffolding
+## Features
+### Book a Doctor appointment
+A feature that allows users to set a doctor appointment at the clinic or book a home visit. the patients can also view the rating of the doctor.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Doctor's features
+The doctor can manage his own appointments schedule and view the medical history of his patients.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Quick Start
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<ul>
+<li> Fork and clone the repo using </li>
+ </ul>
+ 
+ 
+ 
+ ```bash
+ git clone https://github.com/ThoryaAhmed/Digital-Healthcare-platform
+ cd Digital-Healthcare-platform
+ ```
+ <ul>
+<li> Install Dependencies </li>
+ </ul>
+ 
+ ```bash
+ npm install 
+ ```
+ 
+  <ul>
+<li> then run the application </li>
+ </ul>
+ 
+ 
+  ```bash
+ ng serve
+ ```
+ 
+ 
+ ```bash
+ visit http://localhost:4200/
+ ```
+ 
+ 
+ 
+<ul>
+<li> To activate virtual environment </li>
+ </ul>
+ 
+ 
+ ```bash
+venv/Scripts/active
+ ```
+ 
+  
+<ul>
+<li> and to run the backend </li>
+ </ul>
+ 
+  
+ ```bash
+python manage.py runserver
+ ```

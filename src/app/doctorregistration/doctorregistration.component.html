@@ -1,7 +1,6 @@
-
 <app-patientheader></app-patientheader>
-<div class="container" >
-  <h1 class="mt-4" *ngIf="!SH()">choose the doctor  </h1>
+<div >
+  <h1  *ngIf="!SH()">choose the doctor  </h1>
   
  
 </div>
@@ -11,7 +10,7 @@
 <br>
 
 
-<div style="background-color:lavender;" *ngIf="!SH()" >
+<div class="p-3 mb-2 " *ngIf="!SH()" >
    <h3>search by name</h3> 
   <input [(ngModel)]="n" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
     aria-label="Search">
@@ -40,7 +39,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let doctor of doctors  | filter:n:'name':d:'department':a:'area' ; let i = index " >
+
+    <tr *ngFor="let doctor of doctors  | filter:n:'name':d:'department':a:'area'; let i = index;trackBy:trackByIndex; " >
       
       <th scope="row"></th>
       <td>{{doctor.name}}</td>
@@ -49,7 +49,7 @@
       <td>{{doctor.fees}}</td>
     
       
-    <td> <button type="button"   (click) ="display()" (click)="change(i)"    class="btn btn-primary btn-rounded">book</button></td>
+    <td> <button type="button"   (click) ="display()" (click)="change(getIndex(doctor))"   class="btn btn-primary btn-rounded">book</button></td>
     </tr>
     </table>
 
@@ -85,8 +85,7 @@
      
   
   </div>
-  <div style="background-color:lavender;">
-  <table class="table"  *ngIf="SH() && !dispalyconfirmation()">
+  <table class="table"  *ngIf="SH()&&!dispalyconfirmation()">
     <thead>
      
     </thead>
@@ -144,6 +143,7 @@
         
           
         </div></td>
+
       </tr>
       <tr class="table-primary">
         <th scope="row"></th>
@@ -159,12 +159,33 @@
       </tr>
       <tr class="table-primary">
         <th scope="row"></th>
+        <td>choose time</td>
+        <td> <div class="form-group">
+          <label class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="user" value="option1" >
+            <span class="form-check-label" > {{doctors[r()].d_1}} </span>
+          </label>
+          &nbsp;
+          <label class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="user" value="option2"  >
+            <span class="form-check-label"> {{doctors[r()].d_2}} </span>
+          </label>
+          &nbsp;
+          <label class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="user" value="option2"  >
+            <span class="form-check-label"> {{doctors[r()].d_3}} </span>
+          </label>
+          </div></td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
         <td>choose day</td>
         <td><div class="form-outline">
           <input type="text" id="typeText" class="form-control" />
          
         </div></td>
       </tr>
+      
       <tr class="table-primary">
         <th scope="row"></th>
         <td> </td>
@@ -201,6 +222,122 @@
       
     </tbody>
   </table>
-  </div>
+  <table class="table"  *ngIf="SH()&&!dispalyconfirmation()&& 0">
+    <thead>
+     
+    </thead>
+    <tbody>
+      
+  
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>Name:</td>
+        <td>{{doctors[1].name}}</td>
+      </tr>
+     
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>department:</td>
+        <td>{{doctors[1].department}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>area: </td>
+        <td>{{doctors[1].area}}</td>
+      </tr>
+      
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>fees</td>
+        <td>{{doctors[1].fees}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>gender</td>
+        <td>{{doctors[1].gender}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>email</td>
+        <td>{{doctors[1].email}}</td>
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>payment method</td>
+        <td><div class="btn-group">
+          <input
+            type="radio"
+            class="btn-check"
+            name="options"
+            id="option1"
+            autocomplete="off"
+            checked
+          />
+          <label class="btn btn-secondary" for="option1">credit card</label>
+        
+          <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" />
+          <label class="btn btn-secondary" for="option2">cash</label>
+        
+          
+        </div></td>
+        
+      </tr>
+      
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>add comment:</td>
+        <td><div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">comment</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div></td>
+        
+       
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>choose day</td>
+        <td><div class="form-outline">
+          <input type="text" id="typeText" class="form-control" />
+         
+        </div></td>
+        
+      </tr>
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td>  </td>
+        <td><!-- Default radio -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1"> home visit </label>
+          </div>
+          
+          <!-- Default checked radio -->
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              checked
+            />
+            <label class="form-check-label" for="flexRadioDefault2"> clinc </label>
+          </div></td>
+      </tr>
+      
+
+      <tr class="table-primary">
+        <th scope="row"></th>
+        <td></td>
+        <td><button type="button" class="btn btn-primary btn-lg" (click)="confirmation()">confirmation </button></td>
+      </tr>
+      
+    </tbody>
+  </table>
   <app-payment *ngIf="dispalyconfirmation()"></app-payment>
-    

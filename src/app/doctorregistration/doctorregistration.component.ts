@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctorregistration.component.css']
 })
 export class DoctorregistrationComponent implements OnInit {
+  getIndex(item: any) {
+    return this.doctors.indexOf(this.doctors.filter((i, index) => item.name == i.name)[0])
+}
+trackByIndex:any;
+
  n="";
  d="";
  a="";
@@ -52,7 +57,10 @@ export class DoctorregistrationComponent implements OnInit {
       area :'helioples', 
       fees :'200',
       gender:'male',
-      email:'seifeldeenamr@gmail.com'
+      email:'seifeldeenamr@gmail.com',
+      d_1:'3 pm',
+      d_2:'4 pm',
+      d_3:'5 pm'
 
 
   },
@@ -63,7 +71,9 @@ export class DoctorregistrationComponent implements OnInit {
     , 
       fees :'150' ,
       gender:'male',
-      email:'marwanamr@gmail.com'
+      email:'marwanamr@gmail.com',d_1:'7 pm',
+      d_2:'8 pm',
+      d_3:'9 pm'
 
 
   },
@@ -74,7 +84,9 @@ export class DoctorregistrationComponent implements OnInit {
     fees :'100' 
     ,
       gender:'male',
-      email:'noureldeenamr@gmail.com'
+      email:'noureldeenamr@gmail.com',d_1:'9 pm',
+      d_2:'10 pm',
+      d_3:'11 pm'
 
 
   },
@@ -84,7 +96,9 @@ export class DoctorregistrationComponent implements OnInit {
     area :'dokki' , 
     fees :'250',
     gender:'female',
-    email:'hayatmohamed@gmail.com'
+    email:'hayatmohamed@gmail.com',d_1:'5 pm',
+    d_2:'6 pm',
+    d_3:'7 pm'
 
   },
   {
@@ -95,18 +109,12 @@ export class DoctorregistrationComponent implements OnInit {
     , 
       fees :'250',
       gender:'female',
-      email:'seifeldeenamr@gmail.com'
+      email:'thorayaahmed@gmail.com', d_1:'6 pm',
+      d_2:'7 pm',
+      d_3:'8 pm'
 
-  },
-  {
-    name:'seif eldeen amr',
-    department:'orthopedics',
-    area :'helioples' 
-    , 
-      fees :'50'
-
-
-}
+  }
+  
 ,  {
   name:'abdhamidmohamed',
   department:'ear,nose and throat',
@@ -115,8 +123,10 @@ export class DoctorregistrationComponent implements OnInit {
   fees :'200',
   gender:'male',
   email:'abdhamidmohamed@gmail.com'
-
-  
+,
+  d_1:'3 pm',
+  d_2:'4 pm',
+  d_3:'5 pm'
 
 }
 ]

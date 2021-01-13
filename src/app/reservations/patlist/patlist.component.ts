@@ -13,9 +13,9 @@ export class PatlistComponent implements OnInit {
    var = 0;
   constructor(private service: ReservationserviceService) { }
   patients: Patient[] = [
-    new Patient('Thorya Ahmed', 'thoryaabdelzaher@gmail.com', 'Female', 'None', 'sunday', '7 PM'),
-    new Patient('Diaa Ahmed', 'sasyahmed11@gmail.com', 'male', 'NONE', 'satrday', '9 PM'),
-    new Patient('Fatma Ahmed', 'temoahmed30@gmail.com', 'Female', 'NONE', 'monday', '8 PM'),
+   new Patient('Ahmed Mohamed', 'thoryaabdelzaher@gmail.com', 'Female', 'Injuries and Accidents: hospitalized for observation overnight', 'sunday', '7 PM'),
+    new Patient('Menna Fadali', 'sasyahmed11@gmail.com', 'Male', 'Hypercholesterolemia – diagnosed by screening two years ago. Treated with ‘statin’ medication.', 'saturday', '9 PM'),
+    new Patient('Omar Ali', 'temoahmed30@gmail.com', 'Female', 'Significant Childhood Illnesses - NONE', 'monday', '8 PM'),
   ];
 // tslint:disable-next-line:typedef
 ifclick(i: number){

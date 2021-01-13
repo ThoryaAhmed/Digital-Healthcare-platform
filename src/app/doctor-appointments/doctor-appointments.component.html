@@ -15,25 +15,22 @@
   
 
         <!-- follwing part is the service type text box-->
+
+        <div class="form-group">
         <label class="form-label" for="serviceType">Service Type</label>
         <input required 
-        pattern ="home visit|clinic appointment|Home visit|Clinic appointment"    
+          
         ngModel name="serviceType" id="serviceType"
         #serviceType="ngModel" 
         (click)="log(serviceType)" 
         type="text"
          class="form-control"
          placeholder="Enter service type">
-        <div class="alert alert-danger"
-         *ngIf="serviceType.touched &&!serviceType.valid" >
-            <div *ngIf="serviceType.errors.pattern" >
-                please enter a valid service type</div>
-            <div *ngIf="serviceType.errors.required" >
-                please enter a service type</div>
+         <span class="help-block" *ngIf="!serviceType.valid &&serviceType.touched">Please enter a valid service type!</span>
         </div>
-         
-         
-   <!-- follwing part is thefees text box-->
+         <!-- follwing part is thefees text box-->
+         <div class="form-group">
+   
    <label class="form-label" for="fees">fees</label>
    <input required   
    ngModel name="fees" id="fees"
@@ -42,52 +39,40 @@
    type="text"
     class="form-control"
     placeholder="Enter fees">
-   <div class="alert alert-danger"
-    *ngIf="fees.touched &&!fees.valid" >
-       <div *ngIf="firstDay.errors.pattern" >
-           please enter a valid day</div>
-       <div *ngIf="fees.errors.required" >
-           please enter a day</div>
-   </div>
+  
 
-
-
-       <!-- follwing part is the first day text box-->
+    <span class="help-block" *ngIf="!fees.valid && fees.touched">Please enter a valid fees!</span>
+</div>
+ <!-- follwing part is the first day text box-->
+<div class="form-group">
+      
            <label class="form-label" for="firstDay">first available day</label>
           <input required 
-          pattern ="saturday|sunday|monday|tuesday|wednesday|thursday|friday"    
+            
           ngModel name="firstDay" id="firstDay"
           #firstDay="ngModel" 
           (click)="log(firstDay)" 
           type="text"
            class="form-control"
            placeholder="Enter day">
-          <div class="alert alert-danger"
-           *ngIf="firstDay.touched &&!firstDay.valid" >
-              <div *ngIf="firstDay.errors.pattern" >
-                  please enter a valid day</div>
-              <div *ngIf="firstDay.errors.required" >
-                  please enter a day</div>
-          </div>
+
+           <span class="help-block" *ngIf="!firstDay.valid && firstDay.touched">Please enter a valid day!</span>
+
+        </div>
+           <div class="form-group">
            <!-- follwing part is the second day text box-->
            <label class="form-label" for="secondDay">last available day</label>
           <input required 
-          pattern ="saturday|sunday|monday|tuesday|wednesday|thursday|friday"    
+         
           ngModel name="secondDay" id="secondDay"
           #secondDay="ngModel" 
           (click)="log(secondDay)" 
           type="text"
            class="form-control"
            placeholder="Enter Day">
-          <div class="alert alert-danger"
-           *ngIf="secondDay.touched &&!secondDay.valid" >
-              <div *ngIf="secondDay.errors.pattern" >
-                  please enter a valid day</div>
-              <div *ngIf="secondDay.errors.required" >
-                  please enter a day</div>
-          </div>
-  
-  
+        
+           <span class="help-block" *ngIf="!secondDay.valid && secondDay.touched">Please enter a valid day!</span>
+        </div>
   
   <!--next is the text box for first hour-->
   
@@ -97,7 +82,7 @@
       <label class="form-label" for="firstHour">first available hour</label>
      <input 
      required 
-     pattern ="[1-9]{1}" 
+     
      ngModel name="firstHour" id="firstHour"
      #firstHour="ngModel" 
      (click)="log(firstHour)" 
@@ -105,38 +90,31 @@
       class="form-control"
       placeholder="Enter hour">
   
-     <div class="alert alert-danger"
-      *ngIf="firstHour.touched &&!firstHour.valid" >
-         <div *ngIf="firstHour.errors.pattern" >
-             hour dosent match pattern</div>
-         <div *ngIf="firstHour.errors.required" >
-             please enter an hour</div>
-     </div>
+      <span class="help-block" *ngIf="!firstHour.valid && firstHour.touched">Please enter a valid hour!</span>
 
-  
+    </div>
   <!--next is the text box for last hour-->
   
-
+  <div class="form-group">
      <label class="form-label" for="secondHour">last available hour</label>
      <input 
      required 
-     pattern ="[1-9]{1}" 
+    
      ngModel name="secondHour" id="secondHour"
      #secondHour="ngModel" 
      (click)="log(secondHour)" 
      type="text"
       class="form-control"
       placeholder="Enter hour">
+    
+        <span class="help-block" *ngIf="!secondHour.valid && secondHour.touched">Please enter a valid hour!</span>
+    </div>
+   
   
-     <div class="alert alert-danger"
-      *ngIf="secondHour.touched &&!secondHour.valid" >
-         <div *ngIf="secondHour.errors.pattern" >
-             hour dosent match pattern</div>
-         <div *ngIf="secondHour.errors.required" >
-             please enter an hour</div>
-     </div>
-  </div>
+
   
+
+
   <!---------------button that's disabled until valid answers are entered---------------------->
   
   <button class="btn btn-primary btn-block mb-4"
@@ -147,9 +125,11 @@
   
   
    <div  *ngIf="totalForm.valid" > 
-      <p>you've just chosen {{totalForm.value.firstDay}} at  {{totalForm.value.firstHour}} pm </p>
-      <p>and {{totalForm.value.secondDay}} at  {{totalForm.value.secondHour}} pm </p>
-      <p>press submit to confirm this as an available appointment date.</p>
+      <p>you've just chosen that you're available from {{totalForm.value.firstDay}} to {{totalForm.value.secondDay}} </p>
+      <p>from  {{totalForm.value.firstHour}} pm to {{totalForm.value.secondHour}} pm </p>
+      <p>and your fees is {{totalForm.value.fees}} </p>
+      <p>and you offer {{totalForm.value.serviceType}} </p>
+      <p>press submit to confirm .</p>
       </div>
   </div>
   </form>

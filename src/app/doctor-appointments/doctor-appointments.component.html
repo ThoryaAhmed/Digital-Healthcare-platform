@@ -141,7 +141,8 @@
   
   <button class="btn btn-primary btn-block mb-4"
    [disabled]="!totalForm.valid" 
-   (click)="setAppointment(firstDay,secondDay,firstHour,secondHour,serviceType,fees)">
+   (click)="setAppointment(firstDay,secondDay,firstHour,secondHour,serviceType,fees)"
+   (click)="route()">
    Submit</button>
   
   

@@ -1,1 +1,41 @@
 <app-patientheader></app-patientheader>
+    <!--------the logo--------------------------->
+    <div class="displayed">
+        <div class="body">
+        <div class="row" >
+        <div class="col-lg">
+            <img src="assets\logo1.png" 
+            alt="Medico logo"
+             >
+        </div>
+    </div>
+        
+    <!--------patient info-------->
+    
+    <div  *ngFor="let patient of patients1" >
+        <h1>Welcome {{patient.userName}}</h1>
+
+
+        <hr>
+        
+
+        <div  class="blueSquare row col-lg">
+            
+                <a href="#" class="list-group-item 
+                list-group-item-action
+                 flex-column 
+                 align-items-start
+                  active">
+                  <p>User name: {{patient.userName}} </p>
+                  <p>Medical history: {{patient.medicalHistory}}</p>
+                  <p>Gender: {{patient.gender}}</p>
+                  <p>Email: {{patient.email}}</p>
+                 
+                  
+                </a>
+            </div>
+    </div>
+    </div>
+    </div>
+    
+    

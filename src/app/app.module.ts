@@ -18,9 +18,9 @@ import { DoctorInfoComponent } from './doctor-info/doctor-info.component';
 import { PatientInfoComponent } from './patient-info/patient-info.component';
 import { DoctorregistrationComponent } from './doctorregistration/doctorregistration.component';
 import { PaymentComponent } from './payment/payment.component';
+import { InfoService } from './info.service';
+import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
-
-
 
 @NgModule({
   declarations: [
@@ -37,15 +37,19 @@ import { FilterPipe } from './filter.pipe';
     PatientInfoComponent,
     DoctorregistrationComponent,
     PaymentComponent,
+    DoctorAppointmentsComponent,
+    DoctorInfoComponent,
+    PatientInfoComponent,
     FilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
-  providers: [LoginService, SignupService],
+  providers: [LoginService, SignupService, InfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+th, td {
+    font-size: 24px;
+  }
+  /* -------------------------------------
+    GLOBAL
+    A very basic CSS reset
+------------------------------------- */
+.auto { 
+  height:auto; 
+  
+} 

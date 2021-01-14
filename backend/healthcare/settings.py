@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'doctor_account',
     'patient_account',
+    'Services',
+    'payment',
+    'appointment',
+    'comment',
+    'patient_transfer',
     'rest_framework',
     'rest_framework_jwt',
 ]

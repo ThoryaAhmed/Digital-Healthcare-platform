@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'patient_account',
     'rest_framework',
     'rest_framework_jwt',
+    'Services',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ServicesConfig(AppConfig):
-    name = 'Services'
+class appointmentConfig(AppConfig):
+    name = 'appointment'
